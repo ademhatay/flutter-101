@@ -7,6 +7,23 @@ void main(List<String> args) {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  Container createContainer(String text, Color color) {
+    return Container(
+      width: 50,
+      height: 50,
+      color: color,
+      child: Center(
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,92 +33,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter 101'),
         ),
-        body: Row(
+        // buraya bir row içerisinde Flutter yazılı ve ve her bir harf için farklı bir renkte kare oluşturulacak spaceBetween ile aralarında boşluk olacak
+        // ilk column içersindede de dikey biçimde Dersleri yazılı ve her bir harf için farklı bir renkte kare oluşturulacak spaceAround ile aralarında boşluk olacak
+        body: Column(
           children: [
-            Expanded(
-              child: Container(
-                color: Colors.red,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.blue,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.green,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                    Container(
-                      color: Colors.yellow,
-                      child: const FlutterLogo(
-                        size: 60,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            getFlutterRow(),
+            getDersleriCol(),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -114,6 +51,51 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Column getDersleriCol() {
+    return Column(
+      children: [
+        Container(
+          child: createContainer("D", Colors.red),
+        ),
+        Container(
+          child: createContainer("E", Colors.blue),
+        ),
+        Container(
+          child: createContainer("R", Colors.yellow),
+        ),
+        Container(
+          child: createContainer("S", Colors.green),
+        ),
+        Container(
+          child: createContainer("L", Colors.orange),
+        ),
+        Container(
+          child: createContainer("E", Colors.purple),
+        ),
+        Container(
+          child: createContainer("R", Colors.brown),
+        ),
+        Container(
+          child: createContainer("I", Colors.red),
+        ),
+      ],
+    );
+  }
+
+  Row getFlutterRow() {
+    return Row(
+      children: [
+        createContainer("F", Colors.red),
+        createContainer("L", Colors.blue),
+        createContainer("U", Colors.yellow),
+        createContainer("T", Colors.green),
+        createContainer("T", Colors.orange),
+        createContainer("E", Colors.purple),
+        createContainer("R", Colors.brown),
+      ],
     );
   }
 
