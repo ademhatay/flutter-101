@@ -36,9 +36,10 @@ class MyApp extends StatelessWidget {
         // buraya bir row içerisinde Flutter yazılı ve ve her bir harf için farklı bir renkte kare oluşturulacak spaceBetween ile aralarında boşluk olacak
         // ilk column içersindede de dikey biçimde Dersleri yazılı ve her bir harf için farklı bir renkte kare oluşturulacak spaceAround ile aralarında boşluk olacak
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             getFlutterRow(),
-            getDersleriCol(),
+            Expanded(child: getDersleriCol()),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -56,29 +57,30 @@ class MyApp extends StatelessWidget {
 
   Column getDersleriCol() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
+        Expanded(
           child: createContainer("D", Colors.red),
         ),
-        Container(
+        Expanded(
           child: createContainer("E", Colors.blue),
         ),
-        Container(
+        Expanded(
           child: createContainer("R", Colors.yellow),
         ),
-        Container(
+        Expanded(
           child: createContainer("S", Colors.green),
         ),
-        Container(
+        Expanded(
           child: createContainer("L", Colors.orange),
         ),
-        Container(
+        Expanded(
           child: createContainer("E", Colors.purple),
         ),
-        Container(
+        Expanded(
           child: createContainer("R", Colors.brown),
         ),
-        Container(
+        Expanded(
           child: createContainer("I", Colors.red),
         ),
       ],
@@ -87,6 +89,7 @@ class MyApp extends StatelessWidget {
 
   Row getFlutterRow() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         createContainer("F", Colors.red),
         createContainer("L", Colors.blue),
