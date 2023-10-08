@@ -16,14 +16,18 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter 101'),
         ),
-        body: const Text(
-          'Hello World',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.red,
-          ),
-        ),
+        body: Container(
+            color: Colors.purple,
+            child: const Center(
+              child: Text(
+                'Hello World',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                  backgroundColor: Colors.black,
+                ),
+              ),
+            )),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             debugPrint('Clicked');
