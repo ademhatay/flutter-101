@@ -34,6 +34,13 @@ class MyApp extends StatelessWidget {
                     'https://images.unsplash.com/photo-1695653422718-48c2cc37caf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80'),
                 fit: BoxFit.cover,
               ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 10,
+                  offset: Offset(5, 5),
+                ),
+              ],
             ),
             child: const Text(
               "I'm",
