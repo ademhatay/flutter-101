@@ -13,20 +13,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.teal),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.yellow,
         appBar: AppBar(
           title: const Text('Flutter 101'),
         ),
-        body: Container(
-          // alignment: const Alignment(0, 0),
-          // alignment: Alignment.center,
-          color: Colors.purple,
-          constraints: const BoxConstraints(
-              minWidth: 100, minHeight: 100, maxHeight: 200, maxWidth: 200),
-          child: const Text(
-            'Hello World',
-            textAlign: TextAlign.center,
-          ),
+        body: Center(
+          child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              alignment: Alignment.center,
+              child: Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                alignment: Alignment.center,
+                child: const Text('Hello'),
+              )),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
